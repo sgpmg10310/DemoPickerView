@@ -34,6 +34,28 @@ class ViewController: UIViewController,
     
     
     @IBAction func clickAlert2(_ sender: Any) {
+        
+        //경고창 출력
+        let alert = UIAlertController(title: "알림", message: "액션 시트 창", preferredStyle: .actionSheet)
+        
+        //버튼 추가
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel,
+        handler: { (_) in
+            print("취소를 선택")
+        })
+    
+        
+        let saveAction = UIAlertAction(title: "저장", style: UIAlertAction.Style.destructive,
+        handler: { (_) in
+            print("저장을 선택")
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(saveAction)
+        self.present(alert, animated: true)
+        
+        
+        
     }
     
     
