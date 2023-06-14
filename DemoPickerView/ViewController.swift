@@ -15,6 +15,33 @@ class ViewController: UIViewController,
     
     @IBOutlet var picker: UIPickerView!
     
+    
+    @IBAction func clickAlert1(_ sender: Any) {
+        
+        //경고창 출력
+        let alert = UIAlertController(title: "알림", message: "UlAlertController사용", preferredStyle: UIAlertController.Style.alert)
+        //버튼 추가
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel,
+        handler: { (_) in
+            print("취소를 선택")
+        })
+    
+        
+        
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+    
+    
+    @IBAction func clickAlert2(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +49,7 @@ class ViewController: UIViewController,
         
         //누가 위임받은객체인가
         picker.delegate = self  // ViewController인 내가 책임질께
-        picker.dataSource = self 
+        picker.dataSource = self
         
     }
     
